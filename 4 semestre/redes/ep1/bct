@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# This script is used to join/leave the VPN depending on the argument passed to it.
+
+if [ "$1" == "join" ]; then
+    # Join the VPN
+    sudo zerotier-cli join 41d49af6c223d882
+elif [ "$1" == "leave" ]; then
+    # Leave the VPN
+    sudo zerotier-cli leave 41d49af6c223d882
+else
+    echo "Invalid argument passed to $0"
+fi

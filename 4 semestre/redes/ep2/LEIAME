@@ -1,0 +1,52 @@
+AUTOR:
+Adriano Elias Andrade, NUSP: 13671682, email: adrieliasandrade@usp.br
+
+-----------------------------------------------------------------
+
+DESCRIÇÃO:
+Os programas server.py e client.py são utilizados para iniciar um servidor que aceita vários clientes para jogos de pacman.
+link para o vídeo exemplificando a execução de uma partida: https://youtu.be/ooukCVEBf4E?feature=shared
+
+-----------------------------------------------------------------
+
+COMO EXECUTAR:
+Para executar os programas, é preciso ter python instalado
+Para executar o servidor, utilize: python3 server.py <porta que o servidor utilizará> <numero maximo de clientes que podem se conectar no servidor>
+Para executar um cliente, utilize: python3 client.py <IP do servidor> <porta que o servidor está utilizando> <tipo de conexao a ser usada (TCP ou UDP)>
+
+-----------------------------------------------------------------
+
+OPERAÇÕES:
+Uma vez que o programa esteja sendo executado, os clientes podem usar as seguintes operações (que também são descritas no programa, caso o cliente erre um comando):
+    - novo <usuario> <senha>: cria um novo usuário
+    - senha <senha antiga> <senha nova>: muda a senha do usuário
+    - entra <usuario> <senha>: usuário loga no servidor
+    - lideres: informa a tabela de pontuação de todos os usuários registrados no sistema
+    - l: lista todos os usu´arios conectados no momento e se estão jogando ou não
+    - inicia: o jogador inicia uma nova partida como Pac-Man
+    - (COMANDO NÃO FUNCIONA) desafio <oponente>: entra como fantasma na partida sendo jogada pelo outro jogador.
+    - move <direcao>: movimenta o jogador num jogo direção : (a - esquerda, s - baixo, d - direita, w - cima)
+    - (COMANDO NÃO FUNCIONA) atraso: durante uma partida com outro oponente, informa os 3 últimos valores de latência que foram medidos para esse outro oponente.
+    - encerra: encerra uma partida antes da hora
+    - sai: desloga
+    - tchau: finaliza a execução do cliente e retorna para o shell do sistema operacional
+
+-----------------------------------------------------------------
+
+FALHAS:
+Caso o servidor seja desativado, os clientes não conseguirão retornar a ele, mesmo se for reativado em 20 segundos.
+Por outro lado, caso seja desativado, ainda consegue lembrar das contas criadas nele, líderes, partidas que estavam ocorrendo (o que não é útil já aque não consegue voltar as conexões), jogadores logados (o que não é útil já aque não consegue voltar as conexões)
+
+-----------------------------------------------------------------
+
+DEPENDÊNCIAS:
+python3
+
+Informações do SO em que foi testado:
+software:                   Kubuntu 22.04
+KDE Plasma Version:         5.24.7
+KDE Frameworks Version:     5.92.0
+Qt Version:                 5.15.3
+Kernel Version:             6.2.0-37-generic (64-bit)
+CPU :       4 x Intel Core i5-6300HQ CPU @ 2.30GHz
+memória:    3,8 GiB of RAM

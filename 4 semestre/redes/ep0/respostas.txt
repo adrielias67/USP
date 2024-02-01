@@ -1,0 +1,39 @@
+PERGUNTA 1:
+1.
+IP fonte: 181.213.132.3
+IP destino: 10.0.2.15
+MAC origem: RealtekU_12:35:02 (52:54:00:12:35:02)
+MAC destino: b6:8d:e3:c0:6b:2f (b6:8d:e3:c0:6b:2f)
+protocolo: DNS
+
+Utilizando o whois com o endereço de ip fonte, é possível verificar que o segmento foi enviado pela claro.
+Na informação do segmento, diz que é uma standard query para a twitch.map.fastly.net. Pesquisando sobre, descobri que a claro pode fazer uma query dessa para a plataforma de streaming, utilizando
+fastly para obter rapidamente pequenas informações de uma transmissão como o número de espectadores, o que faz sentido ao levar em conta o protocolo DNS e o tamanho pequeno do segmento (92 bytes).
+
+
+2.
+IP fonte: 99.181.80.215
+IP destino: 10.0.2.15
+MAC origem: RealtekU_12:35:02 (52:54:00:12:35:02)
+MAC destino: b6:8d:e3:c0:6b:2f (b6:8d:e3:c0:6b:2f)
+protocolo: TCP
+
+Utilizando o whois com o endereço de ip fonte, é possível verificar que o segmento foi enviado pela twitch.
+Pesquisando, foi possível descobrir que a plataforma de streaming utiliza TCP, e envia as transmissões em intervalos grandes de vídeo, o que explica o tamanho grande do segmento (1514 bytes).
+
+
+
+
+PERGUNTA 2:
+O arquivo demorou 0.269664167s para ser transferido.
+
+Somando o tamanho cada segmento enviado pelo servidor, o total foi de 6464 B.
+o arquivo tem 10 B.
+
+subtraindo o tamanho original, pois queremos saber o que veio a mais:
+6464 B - 10 B = 6454 B
+
+verificando o aumento de em relação ao origianl:
+6464 B = 646.4 * 10 B
+
+Portanto, houve um aumento de 64640% no tamanho.

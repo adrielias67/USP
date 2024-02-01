@@ -1,0 +1,82 @@
+AUTOR:
+Adriano Elias Andrade, NUSP: 13671682, email: adrieliasandrade@usp.br
+
+==============================================================================
+
+DESCRIÇÃO:
+O programa, ou script, tem o objetivo de verificar o estado de um computador (nível de CPU ociosa, servidores abertos e ips conectados), e enviar essa informação por um bot do telegram, como salvá-la em um arquivo, especificando as datas e horas dessas medições.
+Com o script, é possível guardar essas informações para analisá-las. Além disso, a cada 100 medições consecutivas, o arquivo também guardará informações da média de CPU ociosa e tempo que o servidor passou desconectado.
+
+
+==============================================================================
+
+COMO EXECUTAR:
+Antes de executar o programa, é preciso ter criado um bot no telegram, e saber seu token e id.
+
+Para executar o programa, serão necessárias as informações:
+- Intervalo de tempo desejado entre verificações
+- Caminho para o arquivo onde serão salvas as verificações (se o arquivo não existir, um será criado)
+- Limite de porcentagem de uso da CPU desejado
+- token do bot do telegram
+- id do bot do telegram
+
+Abra o diretório que contém o ep2.sh no terminal e execute:
+chmod 777 ep2.sh
+./ep2.sh <intervalo de tempo entre verificações> <caminho do arquivo para salvar as verificações> <porcentagem de CPU> <token do bot> <id do bot>
+
+Isso iniciará o programa, que já começará a imprimir os dados no terminal como enviar mensagens para o bot.
+
+Para encerrar a execução, use ctrl + C.
+
+(note que não é necessário executar 'chmod 777 ep2.sh' mais de uma vez, basta uma só e você poderá executar o script quantas vezes quiser)
+
+==============================================================================
+
+TESTES:
+Aqui há um exemplo de teste para verificar se o programa está funcionando normalmente.
+
+
+Para realizar esse teste, é necessário saber como abrir e entrar num servidor em seu próprio PC.
+Seguem as instruções de como fazer isso (leia, mas ainda não faça)
+
+Para abrir um servidor, abra outro terminal (diferente do que o ep2.sh está rodando) e execute:
+nc -k -l -p 45052
+
+Para entrar nesse servidor como um cliente, abra mais um terminal e execute:
+nc 127.0.0.1 45052
+
+
+Segue agora, o exemplo de teste para verificar se o programa está funcionando normalmente.
+
+Abra o diretório que contém o ep2.sh no terminal e execute:
+chmod 777 ep2.sh
+./ep2.sh 5 teste_do_programa 100 <token do bot> <id do bot>
+Isso iniciará o script, e mensagens começarão a ser impressas no terminal.
+
+Abra um servidor como explicado acima, e espere 10 segundos.
+Entre no servidor como explicado acima, e espere 10 segundos.
+Saia do servidor com ctrl + C (no terminal em que você entrou como cliente).
+Feche do servidor com ctrl + C (no terminal em que você abriu o servidor).
+
+Encerre o programa principal com ctrl + C.
+
+
+Esses passos irão criar um arquivo na sua pasta pessoal chamado "teste_do_programa", informando os dados obtidos, além de mandar mensagens pelo telegram a cada 5 segundos com essas informações.
+Veja que ao abrir o servidor e esperar 10 segundos, as mensagens impressas no terminal e pelo bot indicarão essa mudança. O mesmo acontece ao enterar no servidor. 
+
+(note que não é necessário executar 'chmod 777 ep2.sh' mais de uma vez, basta uma só e você poderá executar o script quantas vezes quiser)
+
+
+Se desejar fazer outros testes, mude o intervalo de tempo, a porcentagem de CPU, crie um arquivo no qual deseja guardar as informações e o utilize.
+
+
+==============================================================================
+
+DEPENDÊNCIAS:
+Para compilar e rodar o programa, são necessários:
+idioma do SO em português
+versão do bash: 5.0.17(1)-release (x86_64-pc-linux-gnu)
+
+Informações do SO em que foi testado:
+nome: 		Ubuntu 20.04.4 LTS
+tipo:		64 bits

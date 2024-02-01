@@ -1,0 +1,34 @@
+AUTOR:
+Adriano Elias Andrade, NUSP: 13671682, email: adrieliasandrade@usp.br
+
+-----------------------------------------------------------------
+
+DESCRIÇÃO:
+Este programa roda um servidor AMQP, que é responsável por comunicar entre os clientes as operações de: declarar uma fila de clientes, escutar uma fila declarada, ou publicar uma mensagem numa fila declarada.
+
+-----------------------------------------------------------------
+
+COMO EXECUTAR:
+Para executar o programa, é necessário ter instalado o AMQP
+Para compilar, basta utilizar o comando "make".
+
+Para executar o programa, utilize "./ep1 <port>"
+Este programa utiliza o port 5672 por padrão.
+
+-----------------------------------------------------------------
+
+OPERAÇÕES:
+Uma vez que o programa esteja sendo executado, os clientes podem usar as seguintes operações:
+
+	- "amqp-declare-queue -q <nome_da_fila>": declara uma fila com o nome dado.
+	- "amqp-consume -q <nome_da_fila> cat": escuta a fila com o nome dado.
+	- "amqp-publish -r <nome_da_fila> -b "<mensagem>"": publica a mensagem dada na fila com o nome dado.
+
+-----------------------------------------------------------------
+
+DEPENDÊNCIAS:
+GNU Make 4.2.1
+
+Informações do SO em que foi testado:
+nome: 		Kubuntu 22.04
+tipo:		64 bits

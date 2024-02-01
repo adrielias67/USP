@@ -1,0 +1,77 @@
+AUTOR:
+Adriano Elias Andrade, NUSP:13671682, adrieliasandrade@usp.br
+
+
+
+DESCRIÇÃO:
+Este programa tem o objetivo de buscar primos. Ele opera em dois modos:
+No modo 0, dado um número, busca pelo primeiro primo imediatamente após este número.
+No modo 1, dado um número, busca se é possível decompor este número como uma multiplicação de dois primos, imprimindo-os caso achar, ou não imprimindo nada caso contrário.
+É possível utilizar números de 1 a 999999936 como entrada.
+
+
+
+COMO COMPILAR:
+Para compilar o programa em assbembly, execute os seguintes comandos no terminal (com o diretório onde o programa está, aberto):
+
+	nasm -f elf64 ep1.s
+	ld -s fonte.o
+
+Isso irá gerar o executável do programa, que será executado
+
+
+
+COMO EXECUTAR:
+Para executar o programa, use no terminal o comando:
+
+	./ep1
+
+Ao executar o programa, o usuário deve digitar duas entradas, separadas por espaço:
+A primeira como 0 ou 1, condizente com o modo desejado (os modos estão explicados na descrição).
+A segunda com o número com o qual se deseja fazer a operação.
+
+
+
+TESTES:
+Seguem alguns exemplos de execução, com as entradas e saídas:
+
+0 5
+7
+
+0 15000033
+15000053
+
+0 999999936
+999999937
+
+1 6
+2 3
+
+1 15000033
+3 5000011
+
+1 64
+(não imprime nada, e encerra o programa)
+1 11
+(não se considera 1 como primo, porntanto não imprime nada)
+
+1 9
+3 3
+
+
+
+DEPENDÊNCIAS:
+Para compilar e rodar o programa, são necessários:
+versão do montador: 	NASM version 2.14.02
+versão do compilador:	gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0
+versão do linker: 	GNU ld (GNU Binutils for Ubuntu) 2.34
+
+Informações do SO em que foi testado:
+nome: 			Ubuntu 20.04.4 LTS
+tipo: 			64 bits
+versão do GNOME: 	3.36.8
+sistema de janelas: 	X11
+
+
+
+

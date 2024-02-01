@@ -1,0 +1,11 @@
+ARN
+42
+Esta frase tem 42 palavras. A palavra mais frequente eh "palavra". A palavra mais longa eh "repeticoes". A maior palavra que nao repete letra eh "vogais".
+A menor palavra com mais vogais sem repeticoes eh "maior". A palavra "palavra" ocorre 7 vezes.
+
+5
+F
+L
+SR
+VD
+O palavra

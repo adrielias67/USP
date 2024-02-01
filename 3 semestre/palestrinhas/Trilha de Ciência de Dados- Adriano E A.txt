@@ -1,0 +1,3 @@
+Nessa palestra, o professor Roberto Hirata falou sobre a trilha ciência de dados.
+Nessa área, ele apresentou a KDD (uma conferência de diferentes áreas da ciência de dados), e também falou sobre os diferentes métodos de solução de problemas (científico, engenheiro, e computeiro).
+Para a trilha de dados, são obrigatórias pelo menos uma matéria de sistemas, uma de otimização, uma de estatística, além das obrigatórias de ciência de dados.

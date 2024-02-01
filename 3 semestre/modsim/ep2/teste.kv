@@ -1,0 +1,237 @@
+<HomeScreen>:
+    BoxLayout:
+        orientation: 'horizontal'
+
+        # Barra de abas #
+        BoxLayout:
+            size_hint_x: .15
+            orientation: 'vertical'
+
+            Button:
+                text: 'Home'
+                on_release: app.root.current = 'home'
+            Button:
+                text: 'Acelerometro'
+                on_release: app.root.current = 'acelerometro'
+            Button:
+                text: 'Find Peaks'
+                on_release: app.root.current = 'find_peaks'
+            Button:
+                text: 'Euler'
+                on_release: app.root.current = 'euler'
+
+        # Pagina inicial #
+        BoxLayout:
+            padding: 10
+            size_hint_x: .9
+            orientation: "vertical"
+            Label:
+                text: "home"
+
+
+
+<AcelerometroScreen>:
+    BoxLayout:
+        orientation: 'horizontal'
+
+        # Barra de abas #
+        BoxLayout:
+            size_hint_x: .15
+            orientation: 'vertical'
+
+            Button:
+                text: 'Home'
+                on_release: app.root.current = 'home'
+            Button:
+                text: 'Acelerometro'
+                on_release: app.root.current = 'acelerometro'
+            Button:
+                text: 'Find Peaks'
+                on_release: app.root.current = 'find_peaks'
+            Button:
+                text: 'Euler'
+                on_release: app.root.current = 'euler'
+
+        # Acelerometro #
+        BoxLayout:
+            padding: 10
+            size_hint_x: .9
+            orientation: "vertical"
+            
+            BoxLayout:
+                size_hint_y: .8
+                id: grafico_acelerometro
+
+            BoxLayout:
+                size_hint_y: .2
+
+                Button:
+                    id: start_accelerometer
+                    text: 'Start'
+                    on_release: app.start_accelerometer(self)
+                Button:
+                    text: 'Stop'
+                    #on_release: root.stop()  <-(precisa fazer uma função pra isso no .py)
+                Button:
+                    text: 'Clear'
+                    #on_release: root.clear()  <-(precisa fazer uma função pra isso no .py)
+                Button:
+                    text: 'Save'
+                    #on_release: root.save()  <-(precisa fazer uma função pra isso no .py)
+
+
+
+<FindPeaksScreen>:
+    BoxLayout:
+        orientation: 'horizontal'
+
+        # Barra de abas #
+        BoxLayout:
+            size_hint_x: .15
+            orientation: 'vertical'
+
+            Button:
+                text: 'Home'
+                on_release: app.root.current = 'home'
+            Button:
+                text: 'Acelerometro'
+                on_release: app.root.current = 'acelerometro'
+            Button:
+                text: 'Find Peaks'
+                on_release: app.root.current = 'find_peaks'
+            Button:
+                text: 'Euler'
+                on_release: app.root.current = 'euler'
+
+        # Find peaks 
+        BoxLayout:
+            padding: 10
+            size_hint_x: .9
+            orientation: "vertical"
+            
+            BoxLayout:
+                size_hint_y: .7
+                padding: 10
+                Graph:
+                    id: grafico_plot
+                    xlabel: 'tempo'
+                    ylabel: 'aceleracao'
+
+            BoxLayout:
+                size_hint_y: .1
+
+                Label:
+                    text: 'Start gap:'
+                TextInput:
+                    id: start_gap_input
+                    on_text: root.start_gap = start_gap_input.text
+
+                Label:
+                    text: 'End gap:'
+                TextInput:
+                    id: end_gap_input
+                    on_text: root.end_gap = end_gap_input.text
+
+            BoxLayout:
+                size_hint_y: .1
+
+                Label:
+                    text: 'Distance:'
+                TextInput:
+                    id: distance_input
+                    on_text: root.distance = distance_input.text
+
+
+                Label:
+                    text: 'Prominence:'
+                TextInput:
+                    id: prominence_input
+                    on_text: root.prominence = prominence_input.text
+
+            BoxLayout:
+                size_hint_y: .1
+                Button:
+                    text: "Find Peaks"
+                    on_release: root.find_peaks_function()
+
+
+
+<EulerScreen>:
+    BoxLayout:
+        orientation: 'horizontal'
+
+        # Barra de abas #
+        BoxLayout:
+            size_hint_x: .15
+            orientation: 'vertical'
+
+            Button:
+                text: 'Home'
+                on_release: app.root.current = 'home'
+            Button:
+                text: 'Acelerometro'
+                on_release: app.root.current = 'acelerometro'
+            Button:
+                text: 'Find Peaks'
+                on_release: app.root.current = 'find_peaks'
+            Button:
+                text: 'Euler'
+                on_release: app.root.current = 'euler'
+
+        # Euler
+        BoxLayout:
+            padding: 10
+            size_hint_x: .9
+            orientation: "vertical"
+            
+            BoxLayout:
+                size_hint_y: .8
+                id: grafico_euler
+
+            BoxLayout:
+                size_hint_y: .1
+                cols: 4
+
+                Label:
+                    text: 'Intervalo de tempo:'
+                TextInput:
+                    id: dT_input
+                    on_text: root.dT = dT_input.text
+            
+            BoxLayout:
+                size_hint_y: .1
+                cols: 4
+                Label:
+                    text: 'Altura/Angulo inicial:'
+                TextInput:
+                    id: h0_input
+                    on_text: root.h0 = h0_input.text
+
+            BoxLayout:
+                size_hint_y: .1
+                cols: 4
+                Label:
+                    text: 'Velocidade inicial:'
+                TextInput:
+                    id: v0_input
+                    on_text: root.v0 = v0_input.text
+
+            BoxLayout:
+                size_hint_y: .1
+                cols: 4
+                Label:
+                    text: 'Tamanho da corda da pendulo:'
+                TextInput:
+                    id: l_input
+                    on_text: root.l = l_input.text
+
+            BoxLayout:
+                size_hint_y: .1
+                Button:
+                    text: "Queda Livre"
+                    on_release: root.quedaLivre(self)  #<-(precisa fazer uma função pra isso no .py)
+            BoxLayout:
+                size_hint_y: .1
+                Button:
+                    text: "Pendulo"
+                    #on_release: root.find_peaks()  <-(precisa fazer uma função pra isso no .py)

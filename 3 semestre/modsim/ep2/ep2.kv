@@ -1,0 +1,104 @@
+WindowManager:
+    Acelerometro:
+    FindPeaks:
+
+
+
+<Acelerometro>
+    name: acelerometro
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        padding: 20
+        spacing: 10
+
+        BoxLayout:
+            id: grafico
+            size_hint_y: .8
+            pos_hint: {'top':1}
+        
+        BoxLayout:
+            size_hint_y: .2
+
+            Button:
+                id: start_button
+                text: "Start"
+                font_size: 32
+                on_release: root.start()
+                disabled: False
+
+            Button:
+                text: "Stop"
+                font_size: 32
+                on_release: root.stop()
+
+            Button:
+                text: "Clear"
+                font_size: 32
+                on_release: root.clear_plot()
+
+
+
+<FindPeaks>
+    name: FindPeaks
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        padding: 20
+        spacing: 10
+
+
+        BoxLayout:
+            id: grafico
+            size_hint_y: .7
+            #pos_hint: {'top':1}
+        
+
+        BoxLayout:
+            size_hint_y: .2
+            cols: 2
+
+            # Distancia
+            BoxLayout:
+                Label:
+                    id: distance
+                    text: "Distance:"
+            BoxLayout:
+                TextInput:
+                    id: distance_input
+
+            # Shift
+            BoxLayout:
+                Label:
+                    id: shift
+                    text: "Shift:"
+            BoxLayout:
+                TextInput:
+                    id: shift_input
+
+            # Prominencia
+            BoxLayout:
+                Label:
+                    id: prominence
+                    text: "Prominence:"
+            BoxLayout:
+                TextInput:
+                    id: prominence_input
+
+            # Step length
+            BoxLayout:
+                Label:
+                    id: step_l
+                    text: "Step length:"
+            BoxLayout:
+                TextInput:
+                    id: step_l_input
+
+
+            BoxLayout:
+                size_hint_y: .1
+                Button:
+                    id: find_peaks_button
+                    text: "Find peaks"

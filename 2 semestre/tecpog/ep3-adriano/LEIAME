@@ -1,0 +1,67 @@
+AUTOR:
+Adriano Elias Andrade, NUSP: 13671682, email: adrieliasandrade@usp.br
+
+==============================================================================
+
+DESCRIÇÃO:
+O tarball consiste na implementação de duas bibliotecas em C.
+Os programas consistem em: 2 bibliotecas em C, um bash script para a compilação das bibliotecas, e um testa.c para testar as funções da biblioteca.
+
+A biblioteca propriedadesnumericas.h é uma biblioteca estática, que possui algumas funções de verificação de priopriedades numéricas.
+
+A biblioteca vetoraleatorio.h é uma biblioteca dinâmica, que cria vetores de números aleatórios.
+
+O bash script compila.sh pode ser executado para compliar as bibliotecas e testá-las com o testa.c
+
+==============================================================================
+
+COMO EXECUTAR:
+Para utilizar as bibliotecas e gerar sua documentação, siga os seguintes passos:
+
+No terminal, instale o doxygen com o comando:
+	sudo apt install doxygen
+Tenha gerado um arquivo de configuração do Doxyfile com o comando:
+	doxygen -g
+Edite as seguintes configurações desse arquivo:
+	GENERATE_LATEX = NO
+	OUTPUT_LANGUAGE = Brazilian
+	OPTIMIZE_OUTPUT_FOR_C = YES
+	GENERATE_TREEVIEW = YES
+	INPUT = vetoraleatorio.h propriedadesnumericas.h
+	EXTRACT_ALL = YES
+	
+
+Abra no terminal o diretório que contém o tarball extraído e execute:
+	chmod 777 compila.sh
+	./compila.sh
+Isso irá compilar e testar a corretude das bibliotecas para serem utilizadas. Caso ocorra algum erro nos testes, será impresso um aviso.
+
+Para utilizar a biblioteca propriedadesnumericas.h em seu programa:
+	Inclua-a em seu código com: #include "propriedadesnumericas.h"
+	Na hora de compilar o código, inclua no comando do gcc: <libpropriedadesnumericas.a>
+
+Para utilizar a biblioteca vetoraleatorio.h em seu programa:
+	Inclua-a em seu código com: #include "vetoraleatorio.h"
+	Execute no terminal: export LD_LIBRARY_PATH=/tmp
+	Na hora de compilar o código, inclua no comando do gcc: <-L/tmp> <-lvetoraleatorio>
+(note que por se tratar de uma biblioteca dinâmica que é guardada em /tmp, é necessário rodar o compila.sh sempre que o conteúdo do /tmp for apagado)
+
+(note que não é necessário executar 'chmod 777 compila.sh' mais de uma vez, basta uma só e você poderá executar o script quantas vezes quiser)
+
+
+
+==============================================================================
+
+TESTES:
+Os testes são feitos com o testa.c, durante a execução do compila.sh. Eles são feitos com números aleatórios de vetoraleatório.h, por testes das funções de propriedadesnumericas.h
+
+==============================================================================
+
+DEPENDÊNCIAS:
+Para compilar e rodar o programa, são necessários:
+versão do bash: 5.0.17(1)-release (x86_64-pc-linux-gnu)
+versão do compilador:	gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0
+
+Informações do SO em que foi testado:
+nome: 		Ubuntu 20.04.4 LTS
+tipo:		64 bits

@@ -1,0 +1,8 @@
+Como a implementação foi feita antes do arquivo de entrada ser postado, a classe "AS" (Árvore de Sufixos) já guardava a árvore de sufixos, o SA e o LCP dentro da sua estrutura.
+Por isso, as funções "VS_AS", "PrintVS_AS", "AS_VS", e "PrintAS_VS" não recebem os parâmetros passados no enunciado por padrão.
+Mesmo assim, é possível usá-las com os parâmetros do enunciado, caso os parâmetros sejam passados.
+
+O programa não funciona para alguns textos.
+- Funciona para: "abracadabra", "banana", "adriano elias andrade"
+- Não funciona para "AAACCTTTGCGACC", ou textos grandes.
+O problema é na montagem da árvore cartesiana com a pilha. Eu não entendi muito bem o que fazer quando houver empate de chaves, e por isso a árvore cartesiana pode ser montada errado.

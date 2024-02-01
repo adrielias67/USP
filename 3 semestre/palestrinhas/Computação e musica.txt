@@ -1,0 +1,5 @@
+Nessa palestra, o professor Marcelo falou sobre música e computação.
+Ele falou sobre captura e interpretação do som pelo computador: um microfone detecta diferenças de pressão no ar e transforma em voltagem
+Diferente do mundo real onde o som é contpinuo, o computador transforma em valores numa lista. Há um problema com isso: sinais diferentes podem ser interpretados iguais.
+O professou também deu alguns exemplos e falou sobre algumas linguagens de texto para representar sons.
+No final da palestra, foi mostrada uma aplicação de computação com música numa apresentação.

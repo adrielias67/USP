@@ -1,0 +1,34 @@
+Vetor de sufixos
+Interface:
+
+VS(T): cria e devolve o vetor de sufixos e dos lcps para o texto T
+Search(P): true se P ocorre no texto T e false caso contrário
+Occurrences(P): lista de posição em que P aparece em T
+NOccurrences(P): número de ocorrências de P em T
+Print(): imprime o texto, o vetor de sufixos e o vetor dos lcps 
+
+Codificação das operações:
+
+1 <T> significa VS(T)
+2 <nome de um arquivo texto> significa VS(T), onde o texto T encontra-se no arquivo discriminado. 
+3 <P> significa Search(P)
+4 <P> significa Occurrences(P)
+5 <P> significa NOccurrences(P)
+6     significa Print(): imprime o texto, o vetor de sufixos e o vetor dos lcps 
+
+Exemplo de entrada para o programa de testes:
+
+1 abracadabra
+5
+3 abra
+4 bra
+5 ab
+
+Saída esperada para este teste:
+
+abracadabra
+VS:  11 10 7 0 3 5 8 1 4 6 9 2
+LCP: 0 1 4 1 1 0 3 0 0 0 2
+True
+1 8
+2

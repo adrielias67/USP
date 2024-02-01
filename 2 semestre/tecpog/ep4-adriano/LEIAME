@@ -1,0 +1,56 @@
+AUTOR:
+Adriano Elias Andrade, NUSP: 13671682, email: adrieliasandrade@usp.br
+
+==============================================================================
+
+DESCRIÇÃO:
+Neste programa, é possível jogar o jogo Pac-Man. Ele é jogado no terminal, e é possível escolher um labirinto customizado para jogá-lo. Para vencer, basta comer todos os pac-dots do labirinto.
+
+==============================================================================
+
+COMO EXECUTAR:
+Para executar o programa, em seu terminal, no diretório onde o tarball foi desempacotado, execute o comando <make> (também é possível executar <make all>, não há diferença). Isto irá criar o executável do jogo.
+
+Para jogar, é preciso ter um labirinto inicialmente. Para isso, cire um arquivo (pode ser .txt ou não) com um labirinto, da seguinte forma:
+ -O labirinto deve ser uma matriz de n linhas e m colunas.
+ -O labirinto pode ter entre 0 a 256 linhas, e entre 0 a 256 colunas (não necessáriamente quadrado), com ambos números de linhas e colunas ímpares.
+ -Os caracteres "*" representam paredes.
+ -Os caracteres "." representam pac-dots, que serão comidas pelo Pac-Man. É necessário ter no mínimo 1 no labirinto.
+ -Os caracteres "F" reperesentam as posições iniciais dos fantasmas, bem como um pac-dot embaixo desse fantasma.
+ -Os caracteres " ", espaço, representam espaços em branco.
+ -A posição central do labirinto, onde o Pac-Man sempre iniciará, sempre deve ser um espaço em branco.
+ -Não é permitido colocar fantasmas num espaço de apenas um quadrado 1x1.
+ -É possível criar caminhos que artavessam de uma parede do labirinto à sua oposta, basta não haver paredes nas duas posições opostas. 
+ 
+Segue um exemplo de labirinto:
+***.***
+*.....*
+*.*.*.*
+... ...
+*.*.*.*
+*....F*
+***.***
+
+
+Tendo o executável e um labirinto criado, execute o programa com o comando:
+	./ep4 <arquivo_do_labirinto> 2>/dev/null
+Isso inicará o jogo.
+
+==============================================================================
+
+TESTES:
+Para efetuar os testes do jogo, verificando se tudo está ocorrendo corrteamente, será usado o Google Tests. É necessário ter este programa instalado.
+
+Para rodar os testes, é necessário ter um arquivo de labirinto chamado "Ltest" para realizá-los, que foi entregue no tarball. Com ele, rode os comandos:
+	make tests
+	./ep4 Ltest 2>/dev/null
+Isso irá realizar os testes. Todos os testes devem passar.
+
+==============================================================================
+
+DEPENDÊNCIAS:
+GNU Make 4.2.1
+
+Informações do SO em que foi testado:
+nome: 		Ubuntu 20.04.4 LTS
+tipo:		64 bits

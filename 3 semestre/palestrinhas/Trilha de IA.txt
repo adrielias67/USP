@@ -1,0 +1,3 @@
+Nessa palestra, o professor Denis falou sobre a trilha de IA.
+Ele explicou sobra a diferença da abordagem de um problema por uma IA e por um humano: a IA recebe várias entradas e resultados, e tenta aproximar por uma função, uma solução genérica para o que foi dado.
+Para a trilha, são necessárias 2 matérias eletivas de IA, 2 eletivas de sistema, e uma eletiva de teoria.
