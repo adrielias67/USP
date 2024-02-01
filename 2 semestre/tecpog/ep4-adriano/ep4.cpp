@@ -13,6 +13,11 @@
 
 
 int main(int argc, char* argv[]){
+	if(argc!=2){
+		cout << "Uso: ./ep4 <nome do arquivo de mapa>\n";
+		exit(1);
+	}
+	
 	#ifdef TESTS
 		::testing::InitGoogleTest(&argc, argv);
 		return RUN_ALL_TESTS();
